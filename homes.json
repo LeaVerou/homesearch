@@ -11,7 +11,8 @@
 			"laundry": "In-basement",
 			"parking": "Street",
 			"level": "Unknown",
-			"commute": "10 min walk"
+			"commute": "10 min walk",
+			"area": "1200"
 		}
 	]
 }
