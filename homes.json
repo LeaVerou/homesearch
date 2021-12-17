@@ -25,7 +25,8 @@
 			"area": "900",
 			"laundry": "On-site",
 			"parking": "Street",
-			"level": "Unknown"
+			"level": "Unknown",
+			"commute": "9 min walk"
 		}
 	]
 }
