@@ -10,8 +10,8 @@
 			"fee": "Unknown",
 			"laundry": "In-basement",
 			"parking": "Street",
-			"level": "Ground floor",
-			"commute": "10"
+			"level": "Unknown",
+			"commute": "10 min walk"
 		}
 	]
 }
