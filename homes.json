@@ -21,11 +21,11 @@
 			"beds": "2",
 			"baths": "1",
 			"rent": "2500",
-			"fee": "Unknown",
+			"fee": "1 rent",
 			"area": "900",
 			"laundry": "On-site",
 			"parking": "Street",
-			"level": "Unknown",
+			"level": "Ground floor",
 			"commute": "9 min walk"
 		}
 	]
