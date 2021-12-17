@@ -12,7 +12,8 @@
 			"parking": "Street",
 			"level": "Unknown",
 			"commute": "10 min walk",
-			"area": "1200"
+			"area": "1200",
+			"notes": "7 min walk to CVS, 8 min walk to Porter Square T, 7 min walk to Davis Square T"
 		}
 	]
 }
