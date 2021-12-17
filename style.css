@@ -35,10 +35,52 @@ img[property="picture"]:is([src=""], :not([src])) {
 	content: "Commute";
 }
 
+:where(.terrible, .bad, .ok, .good, .great) {
+	background: hsl(var(--color-hs, 220 10%) calc(var(--color-l-scale, 1) * 93%));
+}
+
+.terrible {
+	--color-hs: 0 80%;
+	--color-l-scale: .95;
+}
+
+.bad {
+	--color-hs: 0 80%;
+	--color-l-scale: 1.02;
+}
+
+.ok {
+	--color-hs: 60 80%;
+	--color-l-scale: .9;
+}
+
+.good {
+	--color-hs: 80 60%;
+	--color-l-scale: .95;
+}
+
+.great {
+	--color-hs: 95 90%;
+}
+
 .basic-info {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: .5em;
+}
+
+.basic-info > div {
+	padding: .4em .5em;
+	background: hsl(var(--color-hs, 220 10%) calc(var(--color-l-scale, 1) * 93%));
+	border-radius: .25em;
+}
+
+[property="rent"]::before {
+	content: "$"
+}
+
+[property="parking"]::after {
+	content: " parking"
 }
 
 [property="area"]::after {

@@ -16,39 +16,60 @@
 		<tr>
 			<th>Picture</th>
 			<th>URL</th>
-			<th>Address</th>
+			<th>Location</th>
 			<th>Basic Info</th>
-			<th>Walk to Capucine</th>
 			<th>Notes</th>
 		</tr>
 	</thead>
 	<tbody mv-list>
 		<tr mv-list-item="home">
 			<td>
-				<img src="" alt="" property="picture">
+				<a href="[url]" target="_blank">
+					<img src="" alt="" property="picture">
+				</a>
 			</td>
 			<td>
 				<a property="url">[getWebsite(url)]</a>
 			</td>
 			<td>
-				<a href="https://www.google.com/maps/search/[address]?hl=en" property="address" mv-attribute="null" target="_blank"></a>
-			</td>
-			<td>
-				<div class="basic-info">
-					<div title="Beds">🛏 <span property="beds" mv-default="2"></span></div>
-					<div title="Baths">🛁 <span property="baths" mv-default="1"></span></div>
-					<div title="Monthly rent">💰 <span property="rent"></span></div>
-					<div title="Broker fee">🤑 <span property="fee" mv-options="None, ½ rent, 1 rent, Unknown"></span></div>
-					<div title="Area">📐 <span property="area"></span></div>
-					<div title="Laundry">🧺 <span property="laundry" mv-options="On-site, In-basement, None"></span></div>
-					<div title="Parking">🚗 <span property="parking" mv-options="Street, Off-street"></span></div>
-					<div title="Level">🪜 <span property="level" mv-options="Ground floor, 2nd floor, Unknown"></span></div>
+				<div class="[if(contains(address, 'Cambridge'), 'good', 'ok')]">
+					Address:
+					<a href="https://www.google.com/maps/search/[address]?hl=en" property="address" mv-attribute="null" target="_blank"></a>
+				</div>
+				<div>
+					Walk to preschool:
+					<a href="https://www.google.com/maps/dir/[address]/Capucine+Montessori+School,+Massachusetts+Avenue,+Cambridge,+MA,+USA/@42.3921544,-71.123942,17z/?hl=en" target="_blank">
+						<span property="commute"></span>
+					</a>
 				</div>
 			</td>
 			<td>
-				<a href="https://www.google.com/maps/dir/[address]/Capucine+Montessori+School,+Massachusetts+Avenue,+Cambridge,+MA,+USA/@42.3921544,-71.123942,17z/?hl=en" target="_blank">
-					<span property="commute"></span>
-				</a>
+				<div class="basic-info">
+					<div title="Beds" class="[if(beds < 2, 'terrible', if(beds > 2, 'good', 'ok'))]">
+						🛏 <span property="beds" mv-default="2"></span>
+					</div>
+					<div title="Baths" class="[if(baths > 1, 'great', 'ok')]">
+						🛁 <span property="baths" mv-default="1"></span>
+					</div>
+					<div title="Monthly rent" class="[if(rent < 2800, 'good', if(rent >= 3100, 'bad', 'ok'))]">
+						💰 <span property="rent"></span>
+					</div>
+					<div title="Broker fee" class="[if(fee='Unknown', '', if(free='None', 'ok', if(fee='1 rent', 'terrible', 'bad')))]">
+						🤑 <span property="fee" mv-options="None, ½ rent, 1 rent, Unknown"></span>
+					</div>
+					<div title="Area" class="[if(area > 1100, 'great', if(area < 900, 'bad', 'ok'))]">
+						📐 <span property="area"></span>
+					</div>
+					<div title="Laundry" class="[if(laundry ='On-site', 'good', 'bad')]">
+						🧺 <span property="laundry" mv-options="On-site, In basement, None"></span>
+					</div>
+					<div title="Parking" class="[if(parking='Off-street', 'great', 'ok')]">
+						🚗 <span property="parking" mv-options="Street, Off-street"></span>
+					</div>
+					<div title="Level" class="[if(level = 1, 'ok', if(level=2, 'bad', ''))]">
+						🪜 <span property="level" mv-options="1: 1st (Ground) floor, 2: 2nd floor, Unknown"></span>
+					</div>
+				</div>
 			</td>
 			<td property="notes"></td>
 		</tr>
