@@ -1,0 +1,46 @@
+body {
+	font: 100%/1.5 system-ui, sans-serif;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+th {
+	background:hsl(220 10% 95%);
+}
+
+th,
+td {
+	padding: .3em .5em;
+	border: 1px solid hsl(220 10% 80%)
+}
+
+img[property="picture"] {
+	max-width: 20em;
+}
+
+img[property="picture"]:is([src=""], :not([src])) {
+	width: 4em;
+	height: 4em;
+	background: hsl(220 10% 80%) url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🏡</text></svg>') no-repeat center / 60% auto;
+}
+
+[property="commute"].mv-empty.mv-empty.mv-empty {
+	display: inline-block;
+}
+
+[property="commute"].mv-empty:empty::before {
+	content: "Commute";
+}
+
+.basic-info {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: .5em;
+}
+
+[property="area"]::after {
+	content: " sqft";
+}
