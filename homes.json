@@ -9,11 +9,23 @@
 			"rent": "2700",
 			"fee": "Unknown",
 			"laundry": "In-basement",
-			"parking": "Street",
+			"parking": "Off-street",
 			"level": "Unknown",
 			"commute": "10 min walk",
 			"area": "1200",
 			"notes": "7 min walk to CVS, 8 min walk to Porter Square T, 7 min walk to Davis Square T"
+		},
+		{
+			"picture": "https://cdn.jsdelivr.net/gh/LeaVerou/homesearch@ec5a713555ef85931094498f40f02d433e0fd96e/images/pasted-image-1639764132451.png",
+			"address": "59 Norris St, Cambridge, MA",
+			"beds": "2",
+			"baths": "1",
+			"rent": "2500",
+			"fee": "Unknown",
+			"area": "900",
+			"laundry": "On-site",
+			"parking": "Street",
+			"level": "Unknown"
 		}
 	]
 }
