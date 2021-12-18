@@ -44,6 +44,20 @@
 			"parking": "Street",
 			"level": "1",
 			"notes": "Walk in closet!"
+		},
+		{
+			"picture": "http://projects.verou.me/homesearch/images/pasted-image-1639832478631.png",
+			"url": "https://www.facebook.com/marketplace/item/1802892979901996/",
+			"address": "Somerville, MA",
+			"beds": "2",
+			"baths": "2",
+			"rent": "3600",
+			"fee": "0",
+			"area": "1661",
+			"laundry": "On-site",
+			"parking": "Off-street",
+			"level": "1",
+			"notes": "Very luxurious, but expensive. Multiple parking spots. Multi-level home. "
 		}
 	]
 }
