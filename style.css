@@ -1,24 +1,37 @@
 body {
+	padding: 1em;
+	background: hsl(220 10% 92%);
 	font: 100%/1.5 system-ui, sans-serif;
 }
 
-table {
-	border-spacing: 0;
-	border-collapse: collapse;
+a:where(:not(:hover)) {
+	text-decoration: none;
 }
 
-th {
-	background:hsl(220 10% 95%);
+main {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
 }
 
-th,
-td {
-	padding: .3em .5em;
-	border: 1px solid hsl(220 10% 80%)
+.home {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 1em;
+	border: 1px solid hsl(220 10% 80%);
+	padding: 1em;
+	background: white;
+	box-shadow: .05em .05em .1em hsl(220 10% 80%);
+}
+
+@media (min-width: 800px) {
+	.home {
+		grid-template-columns: 20em 1fr;
+	}
 }
 
 img[property="picture"] {
-	max-width: 20em;
+	width: 100%;
 }
 
 img[property="picture"]:is([src=""], :not([src])) {
@@ -39,6 +52,14 @@ img[property="picture"]:is([src=""], :not([src])) {
 	background: hsl(var(--color-hs, 220 10%) calc(var(--color-l-scale, 1) * 93%));
 }
 
+	:where(.terrible, .bad, .ok, .good, .great) a {
+		mix-blend-mode: multiply;
+	}
+
+.terrible, .great {
+	color: 	hsl(var(--color-hs, 220 10%) calc(var(--color-l-scale, 1) * 15%));
+}
+
 .terrible {
 	--color-hs: 0 80%;
 	--color-l-scale: .95;
@@ -46,11 +67,10 @@ img[property="picture"]:is([src=""], :not([src])) {
 
 .bad {
 	--color-hs: 0 80%;
-	--color-l-scale: 1.02;
 }
 
 .ok {
-	--color-hs: 60 80%;
+	--color-hs: 57 80%;
 	--color-l-scale: .9;
 }
 
@@ -60,7 +80,8 @@ img[property="picture"]:is([src=""], :not([src])) {
 }
 
 .great {
-	--color-hs: 95 90%;
+	--color-hs: 92 70%;
+	--color-l-scale: .9;
 }
 
 .basic-info {
@@ -69,20 +90,38 @@ img[property="picture"]:is([src=""], :not([src])) {
 	gap: .5em;
 }
 
+@media (min-width: 1500px) {
+	.basic-info {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
 .basic-info > div {
 	padding: .4em .5em;
 	background: hsl(var(--color-hs, 220 10%) calc(var(--color-l-scale, 1) * 93%));
 	border-radius: .25em;
 }
 
-[property="rent"]::before {
-	content: "$"
+.basic-info > div::before {
+	content: var(--icon);
 }
 
-[property="parking"]::after {
-	content: " parking"
+.basic-info > div [property]::before {
+	content: var(--prepend);
 }
 
-[property="area"]::after {
-	content: " sqft";
+.basic-info > div [property]::after {
+	content: var(--append);
+}
+
+.notes {
+	margin-top: 1em;
+}
+
+.notes > summary {
+	cursor: pointer;
+	color: hsl(220 10% 50%);
+	font-weight: bold;
+	font-size: 75%;
+	text-transform: uppercase;
 }

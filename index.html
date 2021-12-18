@@ -11,82 +11,62 @@
 </head>
 <body mv-app="homesearch" mv-storage="https://github.com/leaverou/homesearch/homes.json" class="mv-autoedit">
 
-<table>
-	<thead>
-		<tr>
-			<th>Picture</th>
-			<th>URL</th>
-			<th>Location</th>
-			<th>Basic Info</th>
-			<th>Notes</th>
-		</tr>
-	</thead>
-	<tbody mv-list>
-		<tr mv-list-item="home">
-			<td>
-				<a href="[url]" target="_blank">
-					<img src="" alt="" property="picture">
-				</a>
-			</td>
-			<td>
-				<a property="url">[getWebsite(url)]</a>
-			</td>
-			<td>
-				<div class="[if(contains(address, 'Cambridge'), 'good', 'ok')]">
-					Address:
+<main mv-list>
+	<article class="home" mv-list-item="home">
+		<div class="picture">
+			<a href="[url]" target="_blank">
+				<img src="" alt="" property="picture">
+				<div class="listing">🌎 <a property="url">[getWebsite(url)]</a></div>
+			</a>
+		</div>
+
+		<div class="all-info">
+			<div class="basic-info">
+				<div class="[if(contains(address, 'Cambridge'), 'good', 'ok')]" style="--icon: '📍';">
 					<a href="https://www.google.com/maps/search/[address]?hl=en" property="address" mv-attribute="null" target="_blank"></a>
 				</div>
-				<div>
-					Walk to preschool:
+				<div class="" style="--icon: '🚶🏽'; --append: ' to preschool'">
 					<a href="https://www.google.com/maps/dir/[address]/Capucine+Montessori+School,+Massachusetts+Avenue,+Cambridge,+MA,+USA/@42.3921544,-71.123942,17z/?hl=en" target="_blank">
 						<span property="commute"></span>
 					</a>
 				</div>
-			</td>
-			<td>
-				<div class="basic-info">
-					<div title="Beds" class="[if(beds < 2, 'terrible', if(beds > 2, 'good', 'ok'))]">
-						🛏 <span property="beds" mv-default="2"></span>
-					</div>
-					<div title="Baths" class="[if(baths > 1, 'great', 'ok')]">
-						🛁 <span property="baths" mv-default="1"></span>
-					</div>
-					<div title="Monthly rent" class="[if(rent < 2800, 'good', if(rent >= 3100, 'bad', 'ok'))]">
-						💰 <span property="rent"></span>
-					</div>
-					<div title="Broker fee" class="[if(fee='Unknown', '', if(free='None', 'ok', if(fee='1 rent', 'terrible', 'bad')))]">
-						🤑 <span property="fee" mv-options="None, ½ rent, 1 rent, Unknown"></span>
-					</div>
-					<div title="Area" class="[if(area > 1100, 'great', if(area < 900, 'bad', 'ok'))]">
-						📐 <span property="area"></span>
-					</div>
-					<div title="Laundry" class="[if(laundry ='On-site', 'good', 'bad')]">
-						🧺 <span property="laundry" mv-options="On-site, In basement, None"></span>
-					</div>
-					<div title="Parking" class="[if(parking='Off-street', 'great', 'ok')]">
-						🚗 <span property="parking" mv-options="Street, Off-street"></span>
-					</div>
-					<div title="Level" class="[if(level = 1, 'ok', if(level=2, 'bad', ''))]">
-						🪜 <span property="level" mv-options="1: 1st (Ground) floor, 2: 2nd floor, Unknown"></span>
-					</div>
+				<div title="Beds" class="[classify(beds, terrible: 1, ok: 2, great: 3)]" style="--icon: '🛏'; --append: ' bedrooms'">
+					<span property="beds" mv-default="2"></span>
 				</div>
-			</td>
-			<td property="notes"></td>
-		</tr>
-	</tbody>
-</table>
+				<div title="Baths" class="[classify(baths, great: 2, good: 1.5, ok: 1)]" style="--icon: '🛁'; --append: ' bathrooms'">
+					<span property="baths" mv-default="1"></span>
+				</div>
+				<div title="Monthly rent" class="[classify(rent, terrible: 3400, bad: 3100, ok: 2800, good: 2500, great: 0)]" style="--icon: '💰'; --prepend: '$'">
+					<span property="rent"></span>
+				</div>
+				<div title="Broker fee" class="[classify(fee, ok: 0, bad: 0.5, terrible: 1)]" style="--icon: '🤑 '; --append: ' fee'">
+					<span property="fee" mv-options="0: No, 0.5: ½ rent, 1: 1 rent, Unknown"></span>
+				</div>
+				<div title="Area" class="[classify(area, great: 1100, ok: 900, bad: 0)]" style="--icon: '📐'; --append: ' sqft'">
+					<span property="area"></span>
+				</div>
+				<div title="Laundry" class="[classify(laundry, good: 'On-site', bad: '*')]" style="--icon: '🧺'; --append: ' laundry'">
+					<span property="laundry" mv-options="On-site, In basement, None"></span>
+				</div>
+				<div title="Parking" class="[classify(parking, great: 'Off-street', ok: 'Street')]" style="--icon: '🚗'; --append: ' parking'">
+					<span property="parking" mv-options="Street, Off-street"></span>
+				</div>
+				<div title="Entrance level" class="[classify(level, ok: 1, bad: 2)]" style="--icon: '🪜';">
+					<span property="level" mv-options="1: 1st (Ground) floor, 2: 2nd floor, Unknown"></span>
+				</div>
+				<div title="Levels in home" class="[classify(levels, ok: 1, bad: 2, terrible: 3)]" style="--icon: '🏯';">
+					<span property="levels" mv-options="1: Single-level home, 2: 2 levels, 3: 3 levels, Unknown"></span>
+				</div>
+			</div>
+			<details class="notes" open>
+				<summary>Notes</summary>
+				<div property="notes"></div>
+			</details>
+		</div>
+	</article>
+</main>
 
 <script src="https://get.mavo.io/mavo.js"></script>
-<script>
-function getWebsite(url) {
-	return !!Mavo.value(url) ? new URL(url).host.replace(/^www\./, "") : "(Website)";
-}
-
-document.addEventListener("click", evt => {
-	if (evt.target.closest('[mv-mode="edit"] a[property]')) {
-		evt.preventDefault();
-	}
-});
-</script>
+<script src="index.js"></script>
 </body>
 </html>
