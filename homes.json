@@ -96,7 +96,8 @@
 			"great": "1100",
 			"ok": "900",
 			"bad": "800",
-			"terrible": "0"
+			"terrible": "0",
+			"good": "1000"
 		},
 		{
 			"feature": "Laundry",
