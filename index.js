@@ -26,7 +26,7 @@ function classify(value, ...classes) {
 		if (breakpoint === null) {
 			delete classes[cl];
 		}
-		else if (breakpoint == value || breakpoint == "*") {
+		else if (breakpoint == value) {
 			return cl;
 		}
 	}
@@ -37,6 +37,11 @@ function classify(value, ...classes) {
 
 	for (let cl of allClasses) {
 		let breakpoint = classes[cl];
+
+		if (breakpoint == "*"){
+			// We need to do this on a second pass, because otherwise if it appears in the middle, we'd never get to anything after it
+			return cl;
+		}
 
 		if (increasing && value < breakpoint || !increasing && value > breakpoint) {
 			return cl;
