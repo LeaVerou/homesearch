@@ -17,12 +17,16 @@ function classify(value, ...classes) {
 	if (value == "Unknown" || !value) {
 		return "";
 	}
+	classes = classes.flat();
+	classes = Object.assign(...classes.filter(e => !!e));
 
-	classes = Object.assign(...classes);
+	for (let cl of allClasses) {
+		let breakpoint = Mavo.value(classes[cl]);
 
-	for (let cl in classes) {
-		let breakpoint = classes[cl];
-		if (breakpoint == value || breakpoint == "*") {
+		if (breakpoint === null) {
+			delete classes[cl];
+		}
+		else if (breakpoint == value || breakpoint == "*") {
 			return cl;
 		}
 	}
@@ -31,7 +35,7 @@ function classify(value, ...classes) {
 	let breakpoints = Object.values(classes);
 	let increasing = breakpoints[0] < breakpoints[1];
 
-	for (let cl in classes) {
+	for (let cl of allClasses) {
 		let breakpoint = classes[cl];
 
 		if (increasing && value < breakpoint || !increasing && value > breakpoint) {

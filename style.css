@@ -14,6 +14,26 @@ main {
 	gap: 1em;
 }
 
+fieldset {
+	border: 1px solid hsl(220 10% 50% / .3);
+	border-radius: .4em;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+th {
+	background:hsl(0 0% 0% / .05);
+}
+
+th,
+td {
+	padding: .3em .5em;
+	border: 1px solid hsl(220 10% 80%)
+}
+
 .home {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -28,16 +48,42 @@ main {
 	.home {
 		grid-template-columns: 20em 1fr;
 	}
+
+	img[property="picture"] {
+		height: 100%;
+		contain: size;
+	}
+}
+
+.picture {
+	position: relative;
 }
 
 img[property="picture"] {
+	display: block;
 	width: 100%;
+	object-fit: cover;
 }
 
 img[property="picture"]:is([src=""], :not([src])) {
-	width: 4em;
-	height: 4em;
+	min-width: 4em;
+	min-height: 4em;
 	background: hsl(220 10% 80%) url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🏡</text></svg>') no-repeat center / 60% auto;
+}
+
+.listing {
+	position: absolute;
+	background: white;
+	bottom: -.2em;
+	right: 0;
+	padding: .2em 0 0 .6em;
+	border-top-left-radius: .3em;
+	font-weight: bold;
+	color: black;
+}
+
+.listing:not(:hover) {
+	mix-blend-mode: screen;
 }
 
 [property="commute"].mv-empty.mv-empty.mv-empty {
@@ -87,23 +133,35 @@ img[property="picture"]:is([src=""], :not([src])) {
 .basic-info {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: .5em;
+	gap: .5em .8em;
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1400px) {
 	.basic-info {
 		grid-template-columns: repeat(4, 1fr);
 	}
 }
 
+@media (min-width: 1500px) {
+	.basic-info {
+		grid-template-columns: repeat(5, 1fr);
+	}
+}
+
 .basic-info > div {
-	padding: .4em .5em;
+	position: relative;
+	padding: .4em .5em .4em 1.5em;
 	background: hsl(var(--color-hs, 220 10%) calc(var(--color-l-scale, 1) * 93%));
 	border-radius: .25em;
 }
 
 .basic-info > div::before {
 	content: var(--icon);
+	position: absolute;
+	font-size: 150%;
+	top: -.4em;
+	left: -.2em;
+	transform: rotate(-5deg);
 }
 
 .basic-info > div [property]::before {
@@ -118,10 +176,25 @@ img[property="picture"]:is([src=""], :not([src])) {
 	margin-top: 1em;
 }
 
-.notes > summary {
+summary {
 	cursor: pointer;
 	color: hsl(220 10% 50%);
 	font-weight: bold;
 	font-size: 75%;
 	text-transform: uppercase;
+}
+
+address {
+	font-style: inherit;
+}
+
+.mv-add-home {
+	padding: .5em;
+	font: inherit;
+	font-size: 120%;
+	cursor: pointer;
+}
+
+#settings {
+	margin-bottom: 1em;
 }
