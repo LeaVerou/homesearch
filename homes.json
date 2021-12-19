@@ -63,5 +63,63 @@
 			"notes": "Very luxurious, but expensive. Multiple parking spots. Amazing patio. Multi-level home.",
 			"levels": "Unknown"
 		}
+	],
+	"breakpoints": [
+		{
+			"feature": "Beds",
+			"great": "3",
+			"ok": "2",
+			"bad": "0",
+			"terrible": "1"
+		},
+		{
+			"feature": "Baths",
+			"great": "2",
+			"ok": "1"
+		},
+		{
+			"feature": "Rent",
+			"great": "0",
+			"good": "2500",
+			"ok": "2800",
+			"bad": "3100",
+			"terrible": "3400"
+		},
+		{
+			"feature": "Fee",
+			"ok": "0",
+			"bad": "0.5",
+			"terrible": "1"
+		},
+		{
+			"feature": "Area",
+			"great": "1100",
+			"ok": "900",
+			"bad": "800",
+			"terrible": "0"
+		},
+		{
+			"feature": "Laundry",
+			"good": "On-site",
+			"bad": "In basement",
+			"terrible": "*"
+		},
+		{
+			"feature": "Parking",
+			"great": "Off-street",
+			"ok": "Street"
+		},
+		{
+			"feature": "Entrance level",
+			"ok": "1",
+			"bad": "2",
+			"terrible": "3"
+		},
+		{
+			"feature": "Levels in home",
+			"ok": "1",
+			"bad": "2",
+			"terrible": "3"
+		}
 	]
 }
