@@ -91,12 +91,14 @@
 			"great": "3",
 			"ok": "2",
 			"bad": "0",
-			"terrible": "1"
+			"terrible": "1",
+			"weight": "1"
 		},
 		{
 			"feature": "Baths",
 			"great": "2",
-			"ok": "1"
+			"ok": "1",
+			"weight": 2
 		},
 		{
 			"feature": "Rent",
@@ -104,13 +106,15 @@
 			"good": "2500",
 			"ok": "2800",
 			"bad": "3100",
-			"terrible": "3400"
+			"terrible": "3400",
+			"weight": 5
 		},
 		{
 			"feature": "Fee",
 			"ok": "0",
 			"bad": "0.5",
-			"terrible": "1"
+			"terrible": "1",
+			"weight": 3
 		},
 		{
 			"feature": "Area",
@@ -118,30 +122,35 @@
 			"ok": "900",
 			"bad": "800",
 			"terrible": "0",
-			"good": "1000"
+			"good": "1000",
+			"weight": "1"
 		},
 		{
 			"feature": "Laundry",
 			"good": "On-site",
 			"bad": "In basement",
-			"terrible": "*"
+			"terrible": "*",
+			"weight": 2
 		},
 		{
 			"feature": "Parking",
 			"great": "Off-street",
-			"ok": "Street"
+			"ok": "Street",
+			"weight": "1"
 		},
 		{
 			"feature": "Entrance level",
 			"ok": "*",
 			"bad": "2",
-			"terrible": "3"
+			"terrible": "3",
+			"weight": "1"
 		},
 		{
 			"feature": "Levels in home",
 			"ok": "1",
 			"bad": "2",
-			"terrible": "3"
+			"terrible": "3",
+			"weight": "1"
 		}
 	]
 }
