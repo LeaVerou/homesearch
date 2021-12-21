@@ -204,3 +204,16 @@ address {
 #settings {
 	margin-bottom: 1em;
 }
+
+[property=rented] {
+	position: absolute;
+	background: hsl(0 80% 40%);
+	color: white;
+	padding: .3em .5em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+[mv-app]:not([mv-mode="edit"]).rented {
+	display: none;
+}
