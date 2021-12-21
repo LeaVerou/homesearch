@@ -214,6 +214,10 @@ address {
 	text-transform: uppercase;
 }
 
-[mv-app]:not([mv-mode="edit"]).rented {
+[mv-app]:not([mv-mode="edit"]) .rented {
+	order: 2;
+}
+
+[mv-app]:not([mv-mode="edit"]) .rented:not(.show-rented) {
 	display: none;
 }
