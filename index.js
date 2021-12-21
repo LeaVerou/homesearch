@@ -14,11 +14,16 @@ const allClasses = ["great", "good", "ok", "bad", "terrible"];
 function classify(value, ...classes) {
 	value = Mavo.value(value);
 
-	if (value == "Unknown" || !value) {
+	if (value == "Unknown" || !value || !classes || classes.length === 0) {
 		return "";
 	}
-	classes = classes.flat();
-	classes = Object.assign(...classes.filter(e => !!e));
+	classes = classes.flat().filter(e => !!e);
+
+	if (classes.length === 0) {
+		return "";
+	}
+
+	classes = Object.assign(...classes);
 
 	for (let cl of allClasses) {
 		let breakpoint = Mavo.value(classes[cl]);
