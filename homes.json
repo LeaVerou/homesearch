@@ -1,6 +1,22 @@
 {
 	"home": [
 		{
+			"rented": false,
+			"picture": "https://photos.zillowstatic.com/fp/6d9d62841fc430d2d122ad6b60f49711-cc_ft_1536.webp",
+			"url": "https://www.zillow.com/homedetails/2443-Massachusetts-Ave-UNIT-8-Cambridge-MA-02140/2111407311_zpid/",
+			"address": "2443 Massachusetts Ave UNIT 8, Cambridge, MA 02140",
+			"commute": "10 min walk",
+			"beds": "2",
+			"baths": "2",
+			"rent": "3100",
+			"fee": "0",
+			"area": "1527",
+			"laundry": "On-site",
+			"parking": "Off-street",
+			"level": "1",
+			"levels": "Unknown"
+		},
+		{
 			"picture": "https://img.zumpercdn.com/457575864/1280x960?auto=format&w=392&h=360&fit=crop&dpr=2",
 			"url": "https://www.zumper.com/apartments-for-rent/11128448p/2-bedroom-davis-square-somerville-ma?recommId=add3044f66a2ca792834927349c55d15&bsft_clkid=63a3a9d8-057d-4a8e-8884-ed9fbfe3c007&bsft_eid=ade33e88-7608-ef58-dfe7-1808c61e88df&bsft_mime_type=html&bsft_ek=2021-12-17T13%3A00%3A42Z&bsft_aaid=aa62ecf7-2655-4bf0-bcce-26e6dd5fb92e&bsft_lx=12&bsft_tv=62",
 			"address": "30 Saint James Ave, Somerville, MA 02144, USA",
