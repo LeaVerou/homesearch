@@ -48,8 +48,12 @@ function classify(value, ...classes) {
 			return cl;
 		}
 
-		if (increasing && value < breakpoint || !increasing && value > breakpoint) {
-			return cl;
+		if (!isNaN(value)) { // is numeric?
+			if (increasing && value < breakpoint || !increasing && value > breakpoint) {
+				return cl;
+			}
 		}
+
+
 	}
 }
