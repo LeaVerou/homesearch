@@ -13,7 +13,7 @@
 			"area": "1527",
 			"laundry": "On-site",
 			"parking": "Off-street",
-			"level": "1",
+			"level": "3e",
 			"levels": "Unknown"
 		},
 		{
@@ -132,7 +132,7 @@
 		},
 		{
 			"feature": "Entrance level",
-			"ok": "1",
+			"ok": "*",
 			"bad": "2",
 			"terrible": "3"
 		},
