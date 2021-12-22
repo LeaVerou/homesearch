@@ -221,3 +221,11 @@ address {
 [mv-app]:not([mv-mode="edit"]) .rented:not(.show-rented) {
 	display: none;
 }
+
+.score {
+	margin-bottom: 1rem;
+}
+
+.analysis {
+	font-size: 75%;
+}

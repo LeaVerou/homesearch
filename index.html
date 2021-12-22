@@ -19,6 +19,7 @@
 		<table>
 			<colgroup>
 				<col>
+				<col>
 				<col class="great">
 				<col class="good">
 				<col class="ok">
@@ -28,6 +29,7 @@
 			<thead>
 				<tr>
 					<th></th>
+					<th>Weight</th>
 					<th>Great</th>
 					<th>Good</th>
 					<th>OK</th>
@@ -38,6 +40,7 @@
 			<tbody mv-list="breakpoints" mv-item-bar="none">
 				<tr mv-list-item>
 					<th scope="row" property="feature">Beds</th>
+					<td property="weight" mv-default="1" mv-edit-type="popup" mv-editor-type="range" mv-editor-min="0" mv-editor-max="5" mv-editor-step="0.1"></td>
 					<td property="great">3</td>
 					<td property="good"></td>
 					<td property="ok">2</td>
@@ -63,13 +66,21 @@
 		</div>
 
 		<div class="all-info">
+			<details class="score">
+				<summary>
+					Score: [score.score]
+					<meta property="score" content="[calculateScore(home, breakpoints)]" />
+				</summary>
+				<p class="analysis">[score.analysis]</p>
+
+			</details>
 			<div class="basic-info">
-				<div class="[if(contains(address, 'Cambridge'), 'good', 'ok')]" style="--icon: '📍';">
+				<div title="Address" class="[if(contains(address, 'Cambridge'), 'good', 'ok')]" style="--icon: '📍';">
 					<a href="https://www.google.com/maps/search/[address]?hl=en" target="_blank">
 						<address property="address"></address>
 					</a>
 				</div>
-				<div class="" style="--icon: '🚶🏽'; --append: ' to preschool'">
+				<div title="Commute" class="[classifyCommute(commute)]" style="--icon: '🚶🏽'; --append: ' to preschool'">
 					<a href="https://www.google.com/maps/dir/[address]/Capucine+Montessori+School,+Massachusetts+Avenue,+Cambridge,+MA,+USA/@42.3921544,-71.123942,17z/?hl=en" target="_blank">
 						<span property="commute"></span>
 					</a>
