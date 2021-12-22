@@ -107,14 +107,14 @@
 			"ok": "2800",
 			"bad": "3150",
 			"terrible": "3400",
-			"weight": 5
+			"weight": 3
 		},
 		{
 			"feature": "Fee",
 			"ok": "0",
 			"bad": "0.5",
 			"terrible": "1",
-			"weight": 3
+			"weight": 2
 		},
 		{
 			"feature": "Area",
@@ -123,20 +123,20 @@
 			"bad": "800",
 			"terrible": "0",
 			"good": "1000",
-			"weight": "1"
+			"weight": 2.5
 		},
 		{
 			"feature": "Laundry",
 			"good": "On-site",
 			"bad": "In basement",
 			"terrible": "*",
-			"weight": 2
+			"weight": 2.5
 		},
 		{
 			"feature": "Parking",
 			"great": "Off-street",
 			"ok": "Street",
-			"weight": "1"
+			"weight": 0.5
 		},
 		{
 			"feature": "Entrance level",
