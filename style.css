@@ -229,3 +229,7 @@ address {
 .analysis {
 	font-size: 75%;
 }
+
+.mv-switch-data::before {
+	content: "🔀";
+}

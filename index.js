@@ -1,3 +1,21 @@
+Mavo.UI.Bar.controls["switch-data"] = {
+	create (custom) {
+		return custom || $.create("button", {
+			textContent: "Switch list",
+			className: "mv-switch-data"
+		});
+	},
+	action () {
+		let url = prompt("Path to data:", this.primaryBackend.url);
+
+		if (url) {
+			let location = new URL(window.location);
+			location.searchParams.set("storage", url);
+			window.location = location;
+		}
+	}
+}
+
 function getWebsite(url) {
 	return !!Mavo.value(url) ? new URL(url).host.replace(/^www\./, "") : "(Website)";
 }
