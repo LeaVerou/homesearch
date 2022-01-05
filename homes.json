@@ -1,10 +1,10 @@
 {
 	"home": [
 		{
-			"rented": false,
+			"rented": true,
 			"picture": "https://photos.zillowstatic.com/fp/6d9d62841fc430d2d122ad6b60f49711-cc_ft_1536.webp",
 			"url": "https://www.zillow.com/homedetails/2443-Massachusetts-Ave-UNIT-8-Cambridge-MA-02140/2111407311_zpid/",
-			"address": "2443 Massachusetts Ave UNIT 8, Cambridge, MA 02140",
+			"address": "2443 Massachusetts Ave, Cambridge, MA 02140",
 			"commute": "10 min walk",
 			"beds": "2",
 			"baths": "2",
